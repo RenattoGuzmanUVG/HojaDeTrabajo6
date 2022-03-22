@@ -1,14 +1,15 @@
-import java.io.*;
-import java.util.*;
+package VisualVM;
 
-public class HashMaps implements MapFactory {
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.Objects;
 
-    HashMap<String, Producto> miMapa = new HashMap<>();
-    Scanner sc = new Scanner(System.in);
+public class LinkedHashMaps implements MapFactory {
 
+    LinkedHashMap<String, Producto> miMapa = new LinkedHashMap<>();
 
-
-    public void nuevoHashMap() throws FileNotFoundException {
+    public void nuevoLinkedHashMap() throws FileNotFoundException {
 
         Lector l = new Lector();
         ArrayList<String> lista = l.lector();
@@ -35,11 +36,12 @@ public class HashMaps implements MapFactory {
                 }
             }
             if (!Objects.equals(producto, "0")) {
-                miMapa.put( producto , new Producto(producto,categoria , wrc));
+                miMapa.put(producto , new Producto(producto,categoria , wrc));
             }
         }
 
     }
+
 
 
     @Override
@@ -107,7 +109,4 @@ public class HashMaps implements MapFactory {
             System.out.println( key );
         }
     }
-
-
 }
-

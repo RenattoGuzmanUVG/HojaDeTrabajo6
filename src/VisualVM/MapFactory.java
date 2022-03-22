@@ -1,3 +1,5 @@
+package VisualVM;
+
 public interface MapFactory {
 
 String agregarProducto(String nombre, String categ); // a) agregar un producto al mapa

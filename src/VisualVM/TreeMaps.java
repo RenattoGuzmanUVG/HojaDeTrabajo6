@@ -1,12 +1,15 @@
-import java.io.File;
+package VisualVM;
+
 import java.io.FileNotFoundException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Objects;
+import java.util.TreeMap;
 
-public class LinkedHashMaps implements MapFactory{
+public class TreeMaps implements MapFactory {
 
-    LinkedHashMap<String, Producto> miMapa = new LinkedHashMap<>();
+    TreeMap<String, Producto> miMapa = new TreeMap<>();
 
-    public void nuevoLinkedHashMap() throws FileNotFoundException {
+    public void nuevoTreeMap() throws FileNotFoundException {
 
         Lector l = new Lector();
         ArrayList<String> lista = l.lector();
@@ -38,7 +41,6 @@ public class LinkedHashMaps implements MapFactory{
         }
 
     }
-
 
 
     @Override

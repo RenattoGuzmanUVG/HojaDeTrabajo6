@@ -1,15 +1,19 @@
-import java.io.File;
+package VisualVM;
+
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.TreeMap;
+import java.util.HashMap;
 import java.util.Objects;
 import java.util.Scanner;
 
-public class TreeMaps implements MapFactory{
+public class HashMaps implements MapFactory {
 
-    TreeMap<String, Producto> miMapa = new TreeMap<>();
+    HashMap<String, Producto> miMapa = new HashMap<>();
+    Scanner sc = new Scanner(System.in);
 
-    public void nuevoTreeMap() throws FileNotFoundException {
+
+
+    public void nuevoHashMap() throws FileNotFoundException {
 
         Lector l = new Lector();
         ArrayList<String> lista = l.lector();
@@ -36,7 +40,7 @@ public class TreeMaps implements MapFactory{
                 }
             }
             if (!Objects.equals(producto, "0")) {
-                miMapa.put(producto , new Producto(producto,categoria , wrc));
+                miMapa.put( producto , new Producto(producto,categoria , wrc));
             }
         }
 
@@ -108,4 +112,7 @@ public class TreeMaps implements MapFactory{
             System.out.println( key );
         }
     }
+
+
 }
+

@@ -1,3 +1,5 @@
+package VisualVM;
+
 public class Producto {
 
     private String nombreProducto;

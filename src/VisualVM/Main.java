@@ -1,5 +1,7 @@
+package VisualVM;
+
 import java.io.FileNotFoundException;
-import java.util.*;
+import java.util.Scanner;
 
 public class Main {
 
