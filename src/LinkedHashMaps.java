@@ -40,33 +40,70 @@ public class LinkedHashMaps implements MapFactory{
     }
 
 
+
     @Override
     public String agregarProducto(String nombre, String categ) {
-        return null;
+        miMapa.put(nombre , new Producto(nombre,categ , 1));
+
+        return "Producto agregado";
     }
 
     @Override
     public String qCategoria(String producto) {
-        return null;
+
+        if (miMapa.containsKey(" " + producto)){
+            Producto valor = miMapa.get(" " + producto);
+            return valor.getCategoriaProducto();
+        }
+        else {
+            return "No hay un producto llamado así";
+        }
+
     }
 
     @Override
     public String datosProducto(String producto) {
-        return null;
+        if (miMapa.containsKey(" " + producto)){
+            Producto valor = miMapa.get(" " + producto);
+
+            String categoria = valor.getCategoriaProducto();
+            int cantidad = valor.getCantProducto();
+
+            String texto = "Producto: " + producto + "  Categoría: " + categoria + "cantidad" + cantidad ;
+            return texto;
+        }
+        else {
+            return "No hay un producto llamado así";
+        }
     }
 
     @Override
     public String datosProductoTipo(String producto) {
-        return null;
+        if (miMapa.containsKey(" " + producto)){
+            Producto valor = miMapa.get(" " + producto);
+
+            String categoria = valor.getCategoriaProducto();
+            int cantidad = valor.getCantProducto();
+
+            String texto = "Producto: " + producto + "  Categoría: " + categoria + "Cantidad: " + cantidad ;
+            return texto;
+        }
+        else {
+            return "No hay un producto llamado así";
+        }
     }
 
     @Override
     public void showInventario() {
-
+        for (String key: miMapa.keySet()) {
+            System.out.println( key );
+        }
     }
 
     @Override
     public void showInventarioTipo() {
-
+        for (String key: miMapa.keySet()) {
+            System.out.println( key );
+        }
     }
 }
